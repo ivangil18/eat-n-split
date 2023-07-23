@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.friends {
+  display: grid;
+  padding: 1.3em;
+}
+
+.info,
+.friendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+ul {
+  width: 25em;
+}
+
+.friendItem {
+  margin-bottom: 0.8em;
+  padding: 0.9em;
+  width: 25em;
+  border-radius: 0.4em;
+  justify-content: space-between;
+}
+
+.avatar-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid;
+}
+
+.avatar-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  width: 60%;
+  height: 60%;
+}
+
+ul li:nth-child(odd) {
+  background-color: #f8e7c4;
+}
+h3 {
+  margin-bottom: 8px;
+}
+
+.addForm {
+  background-color: #f8e7c4;
+  padding: 0.9em;
+  width: 25em;
+  border-radius: 0.4em;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 60%;
+  height: 2.4em;
+  /* margin-bottom: 20px; */
+}
+
+.addForm div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  /* position: relative; */
+}
+
+.btn {
+  padding: 0.6em 1.2em;
+  font-weight: bold;
+  border: 0;
+  background-color: orange;
+  border-radius: 0.6em;
+}
