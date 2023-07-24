@@ -9,6 +9,7 @@ export default function AddFriend({ onSetFriend, onToggleIsAddFriendOpen }) {
     e.preventDefault();
 
     if (friendName === "") return;
+
     const newFriend = {
       id: Date.now(),
       friendName,
@@ -30,6 +31,7 @@ export default function AddFriend({ onSetFriend, onToggleIsAddFriendOpen }) {
           type="text"
           value={friendName}
           id="name"
+          required
           onChange={(e) => setFriendName(e.target.value)}
         ></input>
       </div>
