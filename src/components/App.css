@@ -5,8 +5,15 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 4em;
+
+  margin-top: 8em;
+}
+
 .friends {
-  margin: 1.3em;
   width: 25em;
 }
 
@@ -52,22 +59,17 @@
 }
 
 ul li:nth-child(odd) {
-  background-color: #f8e7c4;
+  background-color: #faf2df;
 }
 h4 {
   margin-bottom: 8px;
 }
 
 .addForm {
-  background-color: #f8e7c4;
+  background-color: #faf2df;
   padding: 0.9em;
   border-radius: 0.4em;
   margin-bottom: 20px;
-}
-
-input {
-  width: 60%;
-  height: 2.4em;
 }
 
 .addForm div {
@@ -84,8 +86,40 @@ input {
   background-color: orange;
   border-radius: 0.6em;
   cursor: pointer;
+  margin: 15px 0;
 }
 
-.msg {
-  margin-bottom: 20px;
+/* CALCULATOR COMPONENTS CSS */
+.calculator {
+  width: 25em;
+  background-color: #faf2df;
+  padding: 0.9em;
+  border-radius: 0.4em;
+  padding: 2.8em;
+}
+h2 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.calculator div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8em;
+}
+
+input,
+select {
+  border: 0;
+  outline: 1px solid rgb(247, 214, 153);
+  width: 60%;
+  height: 2.8em;
+  border-radius: 0.3em;
+  text-align: center;
+}
+
+.calculator input,
+select {
+  width: 12em;
 }
