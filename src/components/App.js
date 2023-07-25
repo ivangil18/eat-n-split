@@ -4,30 +4,42 @@ import Button from "./Button";
 import Friends from "./Friends/Friends";
 
 export default function App() {
+  const [friendSelected, setFriendSelected] = useState("");
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   return (
     <div className="container">
-      <Friends />
-      <SplitBillCalculator />
+      <Friends
+        // friends={friends}
+        // setFriends={setFriends}
+        friendSelected={friendSelected}
+        setFriendSelected={setFriendSelected}
+        isCalculatorOpen={isCalculatorOpen}
+        setIsCalculatorOpen={setIsCalculatorOpen}
+      />
+      {isCalculatorOpen && (
+        <SplitBillCalculator friendSelected={friendSelected} />
+      )}
     </div>
   );
 }
 
-function SplitBillCalculator() {
+function SplitBillCalculator({ friendSelected }) {
   const [bill, setBill] = useState("");
   const [yourExpense, setYourExpense] = useState("");
   // const [friendExpense, setFriendExpense] = useState("");
   const [payer, setPayer] = useState("You");
 
+  //Automatic Calculated (Derived State)
+  const friendExpense = bill - yourExpense;
+
   function handleSplitBill(e) {
     e.preventDefault();
   }
 
-  const friendExpense = bill - yourExpense;
-
   return (
     <div>
       <form className="calculator" onSubmit={handleSplitBill}>
-        <h2>Split a bill with friend</h2>
+        <h2>Split a bill with {friendSelected.friendName}</h2>
         <div>
           <label>💰 Bill value</label>
           <input
