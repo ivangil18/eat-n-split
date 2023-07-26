@@ -14,7 +14,7 @@ export default function AddFriend({ onSetFriend, onToggleIsAddFriendOpen }) {
       id: Date.now(),
       friendName,
       imgUrl,
-      history: `You and ${friendName} are even`,
+      debt: 0,
     };
 
     onSetFriend(newFriend);

@@ -32,11 +32,25 @@ export default function Friend({
 
         <div>
           <h4>{friend.friendName}</h4>
-          <p>{friend.history}</p>
+          {friend.debt !== 0 ? (
+            friend.debt > 0 ? (
+              <p style={{ color: "limegreen" }}>
+                {friend.friendName} owes you ${friend.debt}
+              </p>
+            ) : (
+              <p style={{ color: "red" }}>
+                You owe ${Math.abs(friend.debt)} to {friend.friendName}
+              </p>
+            )
+          ) : (
+            <p>You and {friend.friendName} are even</p>
+          )}
         </div>
       </div>
       <Button className="btn-end" onClick={handleSelect}>
-        {friend.id === friendSelected.id ? "Close" : "Select"}
+        {friend.id === friendSelected.id && isCalculatorOpen
+          ? "Close"
+          : "Select"}
       </Button>
     </li>
   );
